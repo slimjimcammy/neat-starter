@@ -10,8 +10,14 @@ module.exports = function (eleventyConfig) {
   // Merge data instead of overriding
   eleventyConfig.setDataDeepMerge(true);
 
-  // human readable date
+  // human readable date - handle both Date objects and string dates
   eleventyConfig.addFilter("readableDate", (dateObj) => {
+    if (!dateObj) return "";
+
+    if (typeof dateObj === "string") {
+      return DateTime.fromISO(dateObj, { zone: "utc" }).toFormat("dd LLL yyyy");
+    }
+
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     );

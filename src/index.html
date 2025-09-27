@@ -1,22 +1,175 @@
 ---
 layout: default
-title: Neat Starter
+title: Home
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+{% set heroPost = collections.post | first %}
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+<div class="max-w-4xl mx-auto px-4 md:px-0">
+  <!-- Hero Section (text + newsletter, dark mode) -->
+  <section class="relative h-screen overflow-hidden bg-gray-900">
+    <div
+      id="hero-text"
+      class="fixed inset-0 flex flex-col items-center justify-center text-left z-0 pointer-events-none gap-6"
+    >
+      <h1
+        class="text-2xl md:text-4xl font-bold leading-tight text-white px-3 lg:px-0"
+      >
+        From one family to another<br />
+        <span
+          class="bg-gradient-to-r from-teal to-orange-400 bg-clip-text text-transparent"
+        >
+          stories and strategies
+        </span>
+        to get you where you want to be.
+      </h1>
 
-  {% include "./_includes/partials/content.html" %}
+      <!-- Newsletter Signup (dark mode) -->
+      <form
+        class="flex flex-col sm:flex-row items-center gap-4 p-4 rounded-md pointer-events-auto shadow-md"
+      >
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="w-full sm:flex-1 px-4 py-2 border border-gray-600 rounded-md bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-teal"
+        />
+        <button
+          type="submit"
+          class="px-6 py-2 bg-orange-400 text-white font-semibold rounded-md hover:bg-orange-500 transition-colors"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Hero Post (scrolls over hero) -->
+  {% if heroPost and heroPost.data.coverImage %}
+  <section id="hero-post" class="-mt-52 relative z-10">
+    <a href="{{ heroPost.url | url }}" class="block">
+      <!-- Title -->
+      <h2 class="text-lg md:text-xl mb-6 uppercase font-extralight text-white">
+        <span class="text-white">{{ heroPost.data.title }}</span>
+      </h2>
+
+      <!-- Cover Image -->
+      <div class="w-full overflow-hidden rounded-md shadow-orange-glow mb-6">
+        <img
+          src="{{ heroPost.data.coverImage }}"
+          alt="{{ heroPost.data.title }}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </a>
+
+    <!-- Meta Info -->
+    <div class="space-y-3">
+      {% if heroPost.data.description %}
+      <p class="text-base md:text-lg text-gray-300 leading-relaxed">
+        {{ heroPost.data.description }}
+      </p>
+      {% endif %}
+
+      <div
+        class="flex flex-col sm:flex-row sm:items-center text-sm md:text-base text-gray-400 gap-2 sm:gap-4"
+      >
+        <span class="font-medium text-orange-400"
+          >{{ heroPost.data.author }}</span
+        >
+        <span class="hidden sm:inline">•</span>
+        <time>{{ heroPost.date | readableDate }}</time>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Blog Posts Grid -->
+  <section class="py-16 bg-gray-900">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-white">Latest Posts</h2>
+    {% set posts = collections.post %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      {% for post in posts %}
+      <article
+        class="overflow-hidden rounded-md transition-transform hover:translate-y-[-0.75px] hover:shadow-lg group"
+      >
+        <a href="{{ post.url | url }}">
+          {% if post.data.coverImage %}
+          <div class="aspect-video overflow-hidden rounded-t-md">
+            <img
+              src="{{ post.data.coverImage }}"
+              alt="{{ post.data.title }}"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          {% endif %}
+          <div>
+            <h3
+              class="text-lg md:text-xl font-semibold mb-3 mt-2 line-clamp-2 text-white"
+            >
+              <span
+                class="bg-gradient-to-r from-teal to-orange-400 bg-clip-text text-transparent"
+              >
+                {{ post.data.title }}
+              </span>
+            </h3>
+            <p
+              class="text-xs md:text-sm text-gray-100 mb-4 line-clamp-3 group-hover:text-gray-300"
+            >
+              {{ post.data.description }}
+            </p>
+            <div
+              class="flex flex-col sm:flex-row sm:items-center text-xs md:text-sm text-gray-400 gap-1 sm:gap-0"
+            >
+              <span class="font-medium text-teal">{{ post.data.author }}</span>
+              <span class="hidden sm:inline mx-2">•</span>
+              <time>{{ post.date | readableDate }}</time>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
 </div>
+
+<script>
+  const heroText = document.getElementById("hero-text");
+  const heroTextHeading = heroText.querySelector("h1");
+  const heroPost = document.getElementById("hero-post");
+  const heroPostTitle = heroPost.querySelector("h2");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const heroPostTop = heroPost.offsetTop;
+
+    // fade out hero section faster and more transparent
+    const fadeFactor = 300; // smaller = quicker fade
+    const opacity = Math.max(0, 1 - scrollY / fadeFactor);
+    heroText.style.opacity = opacity;
+
+    // subtle shrink (hero container)
+    const shrinkPoint = heroPostTop / 1.5;
+    const scale = Math.max(0.9, 1 - (scrollY / shrinkPoint) * 0.1);
+    heroText.style.transform = `scale(${scale})`;
+
+    // subtle padding shrink
+    const padding = Math.max(0, 40 - scrollY / 20);
+    heroText.style.paddingTop = `${padding}px`;
+    heroText.style.paddingBottom = `${padding}px`;
+
+    // hero post title grows visibly faster
+    const scrollFactor = Math.min(1, scrollY / 500); // adjust 500 for speed
+    const titleScale = 1 + scrollFactor * 0.9; // grows up to 1.4x
+    heroPostTitle.style.transform = `scale(${titleScale})`;
+    heroPostTitle.style.transformOrigin = "left center";
+
+    // gradually increase font weight
+    const minWeight = 200;
+    const maxWeight = 700;
+    const weight = Math.round(
+      minWeight + scrollFactor * (maxWeight - minWeight)
+    );
+    heroPostTitle.style.fontWeight = weight;
+  });
+</script>

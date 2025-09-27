@@ -1,9 +1,17 @@
-<footer class="{{ 'fixed' if path == 'home' }} bottom-0 text-center w-full py-4">
-    <small class="text-gray-500">Copyright ©
-        {{settings.name}}
-        2020. Made with ❤ by
-        <a href="{{settings.url}}" target="_blank" class="underline">{{settings.author}}</a>
-        •
-        <a href="https://github.com/surjithctly/neat-starter" class="underline" target="_blank" rel="noopener">View on Github</a>
-    </small>
+<footer class="relative bg-gray-900 py-12">
+  <!-- Gradient line at the top -->
+  <div
+    class="absolute top-0 left-0 w-full h-[0.5px] bg-gradient-to-r from-teal to-orange-400"
+  ></div>
+
+  <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
+    <p class="mb-2">&copy; 2025 Lam-Cam. All rights reserved.</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="#" class="hover:text-teal transition-colors">Privacy Policy</a>
+      <span class="text-gray-600">•</span>
+      <a href="#" class="hover:text-orange-400 transition-colors"
+        >Terms of Service</a
+      >
+    </div>
+  </div>
 </footer>

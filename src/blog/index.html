@@ -1,41 +1,48 @@
 ---
-layout: blog
+layout: default
+title: Blog
 ---
 
-<section class="mt-15">
-    {% set postslist = collections.post %}
+<div class="max-w-4xl mx-auto px-4 py-8 min-h-full bg-gray-900">
+  <header class="mb-12 text-center">
+    <h1 class="text-4xl font-bold mb-4 text-white">Blog</h1>
+    <p class="text-xl text-gray-300">All our latest posts and insights</p>
+  </header>
 
-    {% for post in postslist | reverse %}
-        <article class="my-8">
-            <h2 class="font-bold text-3xl text-gray-900 mb-2">
-                <a href="{{ post.url | url }}">
-                    {% if post.data.title %}
-                        {{ post.data.title }}
-                    {% else %}
-                        Untitled
-                    {% endif %}
-                </a>
-            </h2>
-            <p class="text-base leading-6 text-gray-500 mb-3">
-                <time>
-                    {{ post.date | readableDate }}
-                    by
-                    <a>{{ post.data.author }}</a>
-
-                </time>
-            </p>
-            {% if post.data.description %}
-                <p class="text-lg text-gray-500 mb-3">
-                    {{ post.data.description }}
-                </p>
-            {% endif %}
-
-            <p>
-                <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
-                    Read more →
-                </a>
-            </p>
-
-        </article>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for post in collections.post %}
+    <article
+      class="overflow-hidden rounded-md transition-transform hover:-translate-y-[0.75px] hover:shadow-lg group"
+    >
+      <a href="{{ post.url | url }}" class="block">
+        {% if post.data.coverImage %}
+        <div class="aspect-video overflow-hidden rounded-t-md">
+          <img
+            src="{{ post.data.coverImage }}"
+            alt="{{ post.data.title }}"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        {% endif %}
+        <div class="pt-3">
+          <h2
+            class="text-xl font-semibold mb-2 line-clamp-2 text-white transition-colors"
+          >
+            {{ post.data.title }}
+          </h2>
+          <p
+            class="text-sm text-gray-100 mb-4 line-clamp-3 group-hover:text-gray-300 transition-colors"
+          >
+            {{ post.data.description }}
+          </p>
+          <div class="flex items-center text-sm text-gray-400 gap-1">
+            <span class="font-medium text-teal">{{ post.data.author }}</span>
+            <span class="mx-2">•</span>
+            <time>{{ post.date | readableDate }}</time>
+          </div>
+        </div>
+      </a>
+    </article>
     {% endfor %}
-</section>
+  </div>
+</div>
