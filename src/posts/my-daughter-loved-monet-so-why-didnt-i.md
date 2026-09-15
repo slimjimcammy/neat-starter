@@ -62,7 +62,7 @@ The more I practiced, the more fun I was having. Letting go and not fussing over
 Now I have another reason to keep painting. My daughter just moved into a new apartment and wants a large painting for it. Wouldn't it be nice, I thought, if I could paint her something Impressionist-inspired myself? Personal, customizable. An original painting, made by me. So that's my goal.
 
 <div style="display: flex; gap: 10px;">
-  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
-  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
-  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
+  <img src="/static/img/image7.jpg" style="max-height: 400px; width: auto;" />
+  <img src="/static/img/image7.jpg" style="max-height: 400px; width: auto;" />
+  <img src="/static/img/image7.jpg" style="max-height: 400px; width: auto;" />
 </div>
