@@ -60,3 +60,9 @@ L﻿ink for the second painting: **<https://artsandculture.google.com/asset/wate
 The more I practiced, the more fun I was having. Letting go and not fussing over whether something was true to color was giving me better results. I found that liberating because I'm generally a person who likes control, and when something doesn't turn out the way I imagined it, it can be stressful for me. Learning to let go has been exhilarating. 
 
 Now I have another reason to keep painting. My daughter just moved into a new apartment and wants a large painting for it. Wouldn't it be nice, I thought, if I could paint her something Impressionist-inspired myself? Personal, customizable. An original painting, made by me. So that's my goal.
+
+<div style="display: flex; gap: 10px;">
+  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
+  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
+  <img src="/static/img/image7.jpg" style="max-height: 200px; width: auto;" />
+</div>
