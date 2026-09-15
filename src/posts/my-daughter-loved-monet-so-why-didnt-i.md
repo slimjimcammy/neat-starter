@@ -17,17 +17,11 @@ As I was trying to make sense of the paintings, I noticed my daughter examining 
 
 A few days later, we went to Monet's house. I knew I'd like the garden since I love flowers and color, but after my reaction to his paintings, I wasn't expecting much.
 
-![Monet's garden photo 1](/static/img/image3.jpg)
-
-![Monet's garden photo 2](/static/img/image5.jpg)
-
-![Monet's garden photo 3](/static/img/image1.jpg)
+![Monet's garden photo 1](/static/img/image3.jpg)![Monet's garden photo 2](/static/img/image5.jpg)![Monet's garden photo 3](/static/img/image1.jpg)
 
 As it turned out, I ended up really enjoying it. There were colorful flowers everywhere, and the lily pond gave off such a serene feeling. Even though it was a gloomy, damp day, I enjoyed the calm, the breeze, and the leaves rustling against each other.
 
-![Monet's pond photo 1](/static/img/image12.jpg)
-
-![Monet's pond photo 2](/static/img/image11.jpg)
+![Monet's pond photo 1](/static/img/image12.jpg)![Monet's pond photo 2](/static/img/image11.jpg)
 
 These two contrasting experiences left me puzzled. How could my daughter, who I thought shared my taste in art, like Monet so much? I was curious to know what each of my kids thought. My son described the paintings as a huge gradient of color that made it hard to tell what was going on and even made his eyes feel blurry. I hadn't really thought about why the paintings looked fuzzy to me until he explained them in that way.  But surprisingly, my daughter said she loved Monet and Impressionism. We both love surrealists like Salvador Dalí, so I couldn't understand how we could see Monet so differently. I wanted to understand what she saw in his paintings that I couldn't, so I started to do some research into Impressionism. 
 
@@ -45,17 +39,13 @@ So I decided to try painting this way myself, starting with an exercise from a Y
 >
 > <https://youtu.be/VUMjKI2dapU?t=338>
 
-![Monet's arches in his garden](/static/img/image4.jpg)
-
-![Painted version of Monet's arches](/static/img/image8.jpg)
+![Monet's arches in his garden](/static/img/image4.jpg)![Painted version of Monet's arches](/static/img/image8.jpg)
 
 Doing this taught me fast just how bad I was at mixing colors. I got so frustrated at one point that I grabbed lavender straight from the tube and threw it onto the painting. Once it dried, I could see that even though the lavender matched the flowers; it felt separate from the rest of the painting. I hadn't mixed it with any of the other colors I'd used, so it didn't relate to the rest of the painting. That's when I understood why it didn't work. The lesson: use colors you've already mixed yourself, not one straight from the tube that hasn't touched anything else on the canvas. 
 
 The next few paintings taught me something different. With my Monet house painting, I noticed when I let go and threw down color without checking it against the photo, like on the chimney in the house painting, the result had real depth. Every time I tried to match exactly what I saw, like the foliage in that same painting, it came out flat.
 
-![Picture of the side of Monet's house](/static/img/image9.jpg)
-
-![Painting of the side of Monet's house](/static/img/image7.jpg)
+![Picture of the side of Monet's house](/static/img/image9.jpg)![Painting of the side of Monet's house](/static/img/image7.jpg)
 
 On my next attempts, I thought my water lilies paintings came out better than anything I'd done before. When I paint from a photo, I sometimes have to decide what colors to use to make the painting work. With Monet's paintings, those decisions had already been made for me. I could follow his colors and the direction of his strokes and see how they created the light and shadows.
 
@@ -70,9 +60,3 @@ L﻿ink for the second painting: **<https://artsandculture.google.com/asset/wate
 The more I practiced, the more fun I was having. Letting go and not fussing over whether something was true to color was giving me better results. I found that liberating because I'm generally a person who likes control, and when something doesn't turn out the way I imagined it, it can be stressful for me. Learning to let go has been exhilarating. 
 
 Now I have another reason to keep painting. My daughter just moved into a new apartment and wants a large painting for it. Wouldn't it be nice, I thought, if I could paint her something Impressionist-inspired myself? Personal, customizable. An original painting, made by me. So that's my goal.
-
-<div style="display: flex; gap: 10px;">
-  <img src="/uploads/image1.jpg" style="max-height: 200px; width: auto;" />
-  <img src="/uploads/image3.jpg" style="max-height: 200px; width: auto;" />
-  <img src="/uploads/image3.jpg" style="max-height: 200px; width: auto;" />
-</div>
